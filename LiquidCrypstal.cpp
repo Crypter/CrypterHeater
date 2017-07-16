@@ -280,6 +280,7 @@ void LiquidCrypstal::pulseEnable(void) {
 
 void LiquidCrypstal::shift_out() {
   for (int i=0; i<8; i++) {
+    delay(0);
     digitalWrite(_data_pin, (_bit_map>>(7-i))&0x01);
     delayMicroseconds(1);
     digitalWrite(_clock_pin, HIGH);
